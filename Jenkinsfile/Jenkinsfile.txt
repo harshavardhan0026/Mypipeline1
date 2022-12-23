@@ -1,9 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-          maven "apache-maven-3.8.6"
-    }
 
     stages {
         stage('git code clone') {
@@ -47,6 +44,8 @@ pipeline {
 			sh 'mvn package'
             }
 			}
+			
+	     
     }
 }
 
@@ -54,4 +53,4 @@ pipeline {
 
 
 
-/opt/apache-maven-3.8.6
+
