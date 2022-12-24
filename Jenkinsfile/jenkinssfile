@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('git code clone') {
             steps {
-			git credentialsId: '01', url: 'https://github.com/harshavardhan0026/ks.git'
+			git branch: 'main', credentialsId: '01', url: 'https://github.com/harshavardhan0026/Mypipeline1.git'
 			}
             }
 			
