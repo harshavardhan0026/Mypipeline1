@@ -1,10 +1,12 @@
 pipeline {
     agent any
 
+    
+
     stages {
         stage('git code clone') {
             steps {
-			git branch: 'main', credentialsId: '01', url: 'https://github.com/harshavardhan0026/Mypipeline1.git'
+			git credentialsId: 'pipelinepro1', url: 'https://github.com/harshavardhan0026/ks.git'
 			}
             }
 			
@@ -41,12 +43,6 @@ pipeline {
 		stage('MVN Package') {
             steps {
 			sh 'mvn package'
-            }
-			}
-			
-	    stage('MVN deploy') {
-            steps {
-			sh 'mvn deploy'
             }
 			}
     }
