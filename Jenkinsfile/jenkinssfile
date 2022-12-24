@@ -4,7 +4,7 @@ pipeline {
     
 
     stages {
-        stage('git code clone') {
+        stage('git clone') {
             steps {
 			git credentialsId: 'pipelinepro1', url: 'https://github.com/harshavardhan0026/ks.git'
 			}
@@ -16,13 +16,13 @@ pipeline {
 			}
             }
 		
-		stage('mvn clean') {
+		stage('code clean') {
             steps {
 			sh 'mvn clean'
             }
 			}
 			
-		stage('mvn validate') {
+		stage('code validate') {
             steps {
 			sh 'mvn validate'
             }
@@ -30,7 +30,7 @@ pipeline {
 			
 		stage('code sonarscan') {
             steps {
-			sh 'mvn sonar:sonar \ -Dsonar.projectKey=ksproject \ -Dsonar.host.url=http://3.98.120.178:9000 \ -Dsonar.login=813826748830a61580218699df1c82746528e7c0'
+			sh 'mvn sonar:sonar -Dsonar.projectKey=ksproject -Dsonar.host.url=http://3.98.120.178:9000 -Dsonar.login=813826748830a61580218699df1c82746528e7c0'
             }
 			}
 			
