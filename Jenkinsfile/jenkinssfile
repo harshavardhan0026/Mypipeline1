@@ -30,7 +30,7 @@ pipeline {
 			
 		stage('code sonarscan') {
             steps {
-			sh 'mvn sonar:sonar -Dsonar.projectKey=ksproject -Dsonar.host.url=http://3.98.120.178:9000 -Dsonar.login=813826748830a61580218699df1c82746528e7c0'
+			sh 'mvn sonar:sonar -Dsonar.projectKey=ksproject -Dsonar.host.url=http://35.183.116.121:9000 -Dsonar.login=813826748830a61580218699df1c82746528e7c0'
             }
 			}
 			
@@ -60,8 +60,6 @@ pipeline {
 			}
     }
 }
-
-
 
 
 
